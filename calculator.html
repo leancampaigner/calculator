@@ -1,0 +1,703 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Nitrate Management ROI Calculator&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(180deg, hsl(120, 25%, 97%), hsl(120, 15%, 94%));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(140, 10%, 9%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.header-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>flex-direction: row;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gap: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.icon-circle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 2.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(80, 60%, 50%));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.icon-circle {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>width: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 3rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.main-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.main-title {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 1024px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.main-title {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(140, 5%, 55%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 32rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.125rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.main-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 1280px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.main-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gap: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 30px -8px hsl(140, 10%, 9%, 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(180deg, hsl(120, 25%, 97%), hsl(120, 15%, 94%));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem 0.75rem 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.card-header {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.125rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(142, 71%, 45%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.card-title {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.card-content {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-section {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.form-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: hsl(142, 71%, 45%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 2px hsl(142, 71%, 45%, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, hsl(142, 71%, 45%), hsl(80, 60%, 50%));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-1px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.results-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.results-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.summary-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px -4px hsl(140, 10%, 9%, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.summary-card {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.summary-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.summary-header {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.summary-value {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(142, 71%, 45%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.summary-value {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.break-even-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(140, 5%, 55%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.break-even-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table th,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table td {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid hsl(120, 20%, 88%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.table th,</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.table td {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 0.75rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table th {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: hsl(120, 15%, 94%, 0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table td:first-child {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.table td:not(:first-child) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: right;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.positive {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(142, 71%, 45%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.negative {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(0, 84.2%, 60.2%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.disclaimer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: hsl(120, 15%, 94%, 0.3);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid hsl(43, 96%, 56%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.disclaimer {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.disclaimer-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: hsl(140, 5%, 55%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 640px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.disclaimer-text {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.hidden {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.animate-slide-up {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: slideUp 0.6s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideUp {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(20px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>transform: translateY(0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="header-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="icon-circle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;rect width="16" height="20" x="4" y="2" rx="2" ry="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="m9 22 5-12h-5l5-12"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="main-title"&gt;Nitrate Management ROI Calculator&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="subtitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Calculate the return on investment for your nitrate management system including sensors,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>riparian planting, and environmental benefits.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="main-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Input Form --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h2 class="card-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Farm Parameters</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;form id="roiForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Basic Farm Info --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;label class="label" for="farmSize"&gt;Farm size (hectares)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;input class="input" type="number" id="farmSize" value="150" min="1" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;label class="label" for="sensorCount"&gt;Number of sensors&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;input class="input" type="number" id="sensorCount" value="3" min="1" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Sensor Costs --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="section-title"&gt;Sensor Costs&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="sensorCost"&gt;Sensor cost per unit (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="sensorCost" value="10000" min="0" step="100"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="sensorMaintenance"&gt;Annual maintenance per sensor (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="sensorMaintenance" value="300" min="0" step="10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Riparian Planting --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="section-title"&gt;Riparian Planting&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="plantingArea"&gt;Planting area (hectares)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="plantingArea" value="5" min="0" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="plantingCost"&gt;Cost per hectare (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="plantingCost" value="2000" min="0" step="50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;label class="label" for="plantingMaintenance"&gt;Annual maintenance per hectare (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;input class="input" type="number" id="plantingMaintenance" value="350" min="0" step="10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Annual Benefits --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="section-title"&gt;Annual Benefits&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="fertilizerSavings"&gt;Fertilizer savings per hectare (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="fertilizerSavings" value="30" min="0" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="catchCropIncome"&gt;Catch crop income per hectare (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="catchCropIncome" value="50" min="0" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Farm Valuation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="section-title"&gt;Farm Valuation&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="farmValuation"&gt;Current valuation (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="farmValuation" value="10000000" min="0" step="1000"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="valuationIncreasePercent"&gt;Increase over 10 years (%)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="valuationIncreasePercent" value="2" min="0" step="0.1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- Other Costs &amp; Benefits --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="form-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;h3 class="section-title"&gt;Other Costs &amp; Benefits&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="form-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="dataManagementCost"&gt;Annual data management cost (NZD)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="dataManagementCost" value="1200" min="0" step="50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;label class="label" for="nitrateReductionPercent"&gt;Nitrate leaching reduction (%)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;input class="input" type="number" id="nitrateReductionPercent" value="25" min="0" max="100" step="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;button type="button" class="button" onclick="calculateROI()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;rect width="16" height="20" x="4" y="2" rx="2" ry="2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;path d="m9 22 5-12h-5l5-12"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Calculate ROI</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Results --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="results" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Summary Cards --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="results-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="summary-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="summary-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Nitrate Reduction</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="nitrateReductionDisplay" class="summary-value"&gt;25%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="summary-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="summary-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>Break-even</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div id="breakEvenDisplay" class="break-even-text"&gt;Within 5 years&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Results Table --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card animate-slide-up"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="card-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;line x1="12" y1="1" x2="12" y2="23"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>5-Year ROI Analysis</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="card-content" style="padding: 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="table-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;table class="table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;th&gt;Year&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;th&gt;Costs&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;th&gt;Benefits&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;th&gt;Net Flow&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                        </span>&lt;th&gt;Cumulative&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tbody id="resultsTableBody"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;!-- Results will be inserted here --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Disclaimer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="disclaimer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="disclaimer-text"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;strong&gt;Note:&lt;/strong&gt; This is a simplified model. Actual ROI and environmental outcomes<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>depend on farm-specific factors and external conditions. Consult professional advice<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>for detailed planning.</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calculateROI() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get form values</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const farmSize = parseFloat(document.getElementById('farmSize').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sensorCost = parseFloat(document.getElementById('sensorCost').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sensorCount = parseFloat(document.getElementById('sensorCount').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const plantingArea = parseFloat(document.getElementById('plantingArea').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const plantingCost = parseFloat(document.getElementById('plantingCost').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const plantingMaintenance = parseFloat(document.getElementById('plantingMaintenance').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fertilizerSavings = parseFloat(document.getElementById('fertilizerSavings').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const catchCropIncome = parseFloat(document.getElementById('catchCropIncome').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const farmValuation = parseFloat(document.getElementById('farmValuation').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const valuationIncreasePercent = parseFloat(document.getElementById('valuationIncreasePercent').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const dataManagementCost = parseFloat(document.getElementById('dataManagementCost').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sensorMaintenance = parseFloat(document.getElementById('sensorMaintenance').value);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const nitrateReductionPercent = parseFloat(document.getElementById('nitrateReductionPercent').value);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Validation</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (farmSize &lt;= 0 || sensorCount &lt;= 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Please enter valid positive numbers for farm size and sensor count.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (nitrateReductionPercent &lt; 0 || nitrateReductionPercent &gt; 100) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Nitrate reduction percentage must be between 0-100%.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Calculations</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sensorInstallCost = sensorCost * sensorCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const plantingCapitalCost = plantingCost * plantingArea;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const totalYear1Costs = sensorInstallCost + plantingCapitalCost;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualSensorMaintenance = sensorMaintenance * sensorCount;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualPlantingMaintenance = plantingMaintenance * plantingArea;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualRecurringCosts = annualSensorMaintenance + annualPlantingMaintenance + dataManagementCost;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualFertSavings = fertilizerSavings * farmSize;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualCatchCropIncome = catchCropIncome * plantingArea;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const annualValuationUplift = (farmValuation * (valuationIncreasePercent / 100)) / 10;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Generate results</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let cumulativeNet = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let tableHTML = '';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (let year = 1; year &lt;= 5; year++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const yearCosts = year === 1 ? totalYear1Costs : annualRecurringCosts;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const yearBenefits = annualFertSavings + annualCatchCropIncome + annualValuationUplift;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const net = yearBenefits - yearCosts;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>cumulativeNet += net;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const costsClass = 'negative';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const benefitsClass = 'positive';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const netClass = net &gt;= 0 ? 'positive' : 'negative';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const cumulativeClass = cumulativeNet &gt;= 0 ? 'positive' : 'negative';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>tableHTML += `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td&gt;${year}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="${costsClass}"&gt;${formatCurrency(yearCosts)}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="${benefitsClass}"&gt;${formatCurrency(yearBenefits)}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="${netClass}"&gt;${formatCurrency(net)}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;td class="${cumulativeClass}" style="font-weight: bold;"&gt;${formatCurrency(cumulativeNet)}&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update display</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('nitrateReductionDisplay').textContent = nitrateReductionPercent + '%';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('breakEvenDisplay').textContent =<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>cumulativeNet &gt;= 0 ? 'Within 5 years' : 'More than 5 years - consider longer horizon';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('resultsTableBody').innerHTML = tableHTML;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('results').classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Scroll to results on mobile</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatCurrency(amount) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return new Intl.NumberFormat('en-NZ', {<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>style: 'currency',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>currency: 'NZD',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>minimumFractionDigits: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maximumFractionDigits: 0</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}).format(amount);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
